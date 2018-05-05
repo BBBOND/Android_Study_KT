@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.bbbond.android_study_kt"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dexOptions {
+        //使用增量模式构建
+        //incremental true
+        //最大堆内存
+        javaMaxHeapSize "8g"
+        //是否支持大工程模式
+        jumboMode = true
+        //预编译
+        preDexLibraries = true
+        //线程数
+        threadCount = 8
+    }
+}
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:multidex:1.0.3'
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
+    implementation project(':module_common')
+    if (isModule.toBoolean()) {
+        implementation project(':module_oreo')
+    }
+
+}
