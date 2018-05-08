@@ -13,8 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.bbbond.androidStudyKT.home.MainActivity"
-            android:theme="@style/NoTranslucent">
+            android:name="com.bbbond.androidStudyKT.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

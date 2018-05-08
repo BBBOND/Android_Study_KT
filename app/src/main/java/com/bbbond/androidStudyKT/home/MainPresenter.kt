@@ -5,7 +5,6 @@ import android.arch.lifecycle.ViewModelProviders
 import androidx.core.net.toUri
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.androidStudyKT.data.ActItem
-import org.jetbrains.anko.toast
 
 class MainPresenter(
         var activity: MainActivity
@@ -26,7 +25,7 @@ class MainPresenter(
     }
 
     override fun jump(actItem: ActItem) {
-        activity.toast(actItem.path)
+//        activity.toast(actItem.path)
         ARouter
                 .getInstance()
                 .build(actItem.path.toUri())
