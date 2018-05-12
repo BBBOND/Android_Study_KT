@@ -1,0 +1,11 @@
+<resources>
+    <string name="oreo_module_name">Oreo</string>
+    <string name="oreo_pip_mode">Picture-in-Picture</string>
+    <string name="oreo_click_to_pip_mode">Click to go to Picture-in-Picture mode</string>
+    <string name="oreo_not_support_pip_mode">The current system version does not support the Picture-in-Picture mode!</string>
+    <string name="oreo_pause">Pause</string>
+    <string name="oreo_like">Like</string>
+    <string name="oreo_show_pic">picture display</string>
+    <string name="oreo_coming_in_pip">coming in Picture-in-Picture mode&#8230;</string>
+    <string name="oreo_receive_like">Like Received!</string>
+</resources>

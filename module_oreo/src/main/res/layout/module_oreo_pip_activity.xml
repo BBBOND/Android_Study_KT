@@ -9,17 +9,18 @@
         android:id="@+id/iv_pip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/oreo_show_pic"
         android:scaleType="center"
-        android:src="@drawable/oreo_01"/>
+        android:src="@drawable/oreo_01" />
 
     <Button
         android:id="@+id/btn_pip"
-        android:layout_below="@id/iv_pip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/iv_pip"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/oreo_click_to_pip_mode"
         android:onClick="toPip"
-        android:text="@string/oreo_click_to_pip_mode"/>
-
+        android:text="@string/oreo_click_to_pip_mode" />
 </RelativeLayout>

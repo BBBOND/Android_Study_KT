@@ -68,7 +68,7 @@ class ModulePIPActivity : BaseActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             btn_pip.isEnabled = false
-            btn_pip.text = "即将进入画中画模式..."
+            btn_pip.text = getString(R.string.oreo_coming_in_pip)
 
             val builder = PictureInPictureParams.Builder()
             val actions: ArrayList<RemoteAction> = ArrayList()
@@ -92,7 +92,7 @@ class ModulePIPActivity : BaseActivity() {
 
     private val likeBroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            toast("Like Receive!")
+            toast(getString(R.string.oreo_receive_like))
         }
     }
 }

@@ -7,11 +7,12 @@
         android:supportsRtl="true">
         <activity
             android:name=".ModuleMainActivity"
-            android:screenOrientation="portrait" />
+            android:label="@string/oreo_module_name"/>
         <activity
             android:name=".pip.ModulePIPActivity"
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
+            android:label="@string/oreo_pip_mode"
             tools:targetApi="n" />
     </application>
 </manifest>

@@ -28,6 +28,7 @@ class ViewHolderAdapter(content: Context, data: List<ActItem>) : BaseAdapter() {
         }
 
         holder.tv?.text = mData[position].title
+        holder.tv?.contentDescription = mData[position].title
         return view
     }
 
