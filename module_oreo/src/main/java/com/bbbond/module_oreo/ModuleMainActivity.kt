@@ -18,7 +18,7 @@ class ModuleMainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ARouter.getInstance().inject(this)
-        setContentView(R.layout.module_main_activity)
+        setContentView(R.layout.module_oreo_main_activity)
 
         initNavigation(back)
     }
