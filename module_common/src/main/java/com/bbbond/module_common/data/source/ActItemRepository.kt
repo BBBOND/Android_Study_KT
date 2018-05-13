@@ -1,14 +1,15 @@
-package com.bbbond.androidStudyKT.data.source
+package com.bbbond.module_common.data.source
 
 import android.support.annotation.VisibleForTesting
-import com.bbbond.androidStudyKT.data.source.local.ActItemLocalDataSource
+import com.bbbond.module_common.data.source.ActItemDataSource
+import com.bbbond.module_common.data.source.local.ActItemLocalDataSource
 
 class ActItemRepository private constructor(
         var actItemLocalDataSource: ActItemLocalDataSource
 ) : ActItemDataSource {
 
-    override fun getActItems(callback: ActItemDataSource.LoadActItemsCallback) {
-        actItemLocalDataSource.getActItems(callback)
+    override fun getActItems(fileName: String, callback: ActItemDataSource.LoadActItemsCallback) {
+        actItemLocalDataSource.getActItems(fileName, callback)
     }
 
     companion object {

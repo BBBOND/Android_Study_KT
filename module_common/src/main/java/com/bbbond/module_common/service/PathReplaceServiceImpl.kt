@@ -1,4 +1,4 @@
-package com.bbbond.androidStudyKT.service
+package com.bbbond.module_common.service
 
 import android.content.Context
 import android.net.Uri

@@ -1,4 +1,4 @@
-package com.bbbond.androidStudyKT.home
+package com.bbbond.module_oreo.home
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -6,11 +6,11 @@ import androidx.core.net.toUri
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.module_common.data.ActItem
 
-class MainPresenter(
-        var activity: MainActivity
-) : MainContract.Presenter {
+class OreoMainPresenter(
+        var activity: OreoMainActivity
+) : OreoMainContract.Presenter {
 
-    private var mainViewModel: MainViewModel = ViewModelProviders.of(activity).get(MainViewModel::class.java)
+    private var mainViewModel: OreoMainViewModel = ViewModelProviders.of(activity).get(OreoMainViewModel::class.java)
 
     init {
         mainViewModel.getActItemList().observe(activity, Observer<List<ActItem>> { t ->

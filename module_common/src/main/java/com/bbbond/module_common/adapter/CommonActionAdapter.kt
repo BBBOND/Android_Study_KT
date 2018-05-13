@@ -1,4 +1,4 @@
-package com.bbbond.androidStudyKT.home
+package com.bbbond.module_common.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.bbbond.androidStudyKT.R
-import com.bbbond.androidStudyKT.data.ActItem
+import com.bbbond.module_common.R
+import com.bbbond.module_common.data.ActItem
 
-class ViewHolderAdapter(content: Context, data: List<ActItem>) : BaseAdapter() {
 
+class CommonActionAdapter(content: Context, data: List<ActItem>) : BaseAdapter() {
     private var mInflater: LayoutInflater = LayoutInflater.from(content)
     private var mData: List<ActItem> = data
 
@@ -19,7 +19,7 @@ class ViewHolderAdapter(content: Context, data: List<ActItem>) : BaseAdapter() {
         val view: View
         if (convertView == null) {
             holder = ViewHolder()
-            view = mInflater.inflate(R.layout.item_list, null)
+            view = mInflater.inflate(R.layout.common_action_list_item, null)
             holder.tv = view.findViewById(R.id.item_tv)
             view.tag = holder
         } else {

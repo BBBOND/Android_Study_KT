@@ -1,6 +1,6 @@
-package com.bbbond.androidStudyKT.data.source
+package com.bbbond.module_common.data.source
 
-import com.bbbond.androidStudyKT.data.ActItem
+import com.bbbond.module_common.data.ActItem
 
 interface ActItemDataSource {
 
@@ -11,6 +11,6 @@ interface ActItemDataSource {
         fun onLoadErr(exception: Exception)
     }
 
-    fun getActItems(callback: LoadActItemsCallback)
+    fun getActItems(fileName: String, callback: LoadActItemsCallback)
 
 }

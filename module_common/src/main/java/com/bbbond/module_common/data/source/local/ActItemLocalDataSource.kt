@@ -1,12 +1,12 @@
-package com.bbbond.androidStudyKT.data.source.local
+package com.bbbond.module_common.data.source.local
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.support.annotation.VisibleForTesting
 import com.alibaba.fastjson.JSONArray
-import com.bbbond.androidStudyKT.data.ActItem
-import com.bbbond.androidStudyKT.data.source.ActItemDataSource
-import com.bbbond.androidStudyKT.units.CommonUtils
+import com.bbbond.module_common.data.ActItem
+import com.bbbond.module_common.data.source.ActItemDataSource
+import com.bbbond.module_common.utils.CommonUtils
 
 class ActItemLocalDataSource private constructor(
         var context: Context
@@ -14,9 +14,9 @@ class ActItemLocalDataSource private constructor(
 
     private val TAG = ActItemLocalDataSource::class.java.simpleName
 
-    override fun getActItems(callback: ActItemDataSource.LoadActItemsCallback) {
+    override fun getActItems(fileName: String, callback: ActItemDataSource.LoadActItemsCallback) {
         try {
-            val text = CommonUtils.readAssetsText(context, "list.json")
+            val text = CommonUtils.readAssetsText(context, fileName)
             val actItems = JSONArray.parseArray(text, ActItem::class.java)
             callback.onActItemsLoaded(actItems)
         } catch (e: Exception) {

@@ -6,10 +6,10 @@
         android:allowBackup="true"
         android:supportsRtl="true">
         <activity
-            android:name=".ModuleMainActivity"
+            android:name=".home.OreoMainActivity"
             android:label="@string/oreo_module_name"/>
         <activity
-            android:name=".pip.ModulePIPActivity"
+            android:name=".pip.OreoPIPActivity"
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
             android:label="@string/oreo_pip_mode"

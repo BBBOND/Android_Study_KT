@@ -16,24 +16,27 @@ import android.util.Rational
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.module_common.BaseActivity
 import com.bbbond.module_oreo.R
 import kotlinx.android.synthetic.main.module_oreo_pip_activity.*
 import org.jetbrains.anko.toast
 
 @Route(path = "/oreo/pip_activity")
-class ModulePIPActivity : BaseActivity() {
+class OreoPIPActivity : BaseActivity() {
 
-    private val TAG = ModulePIPActivity::class.java.simpleName
-
+    private val TAG = OreoPIPActivity::class.java.simpleName
     private val LIKE_ACTION = "like"
+
     @Autowired
     @JvmField
     var back: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ARouter.getInstance().inject(this)
         setContentView(R.layout.module_oreo_pip_activity)
+
         initNavigation(back)
     }
 

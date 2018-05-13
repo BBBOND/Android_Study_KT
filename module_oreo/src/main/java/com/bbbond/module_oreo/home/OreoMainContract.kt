@@ -1,8 +1,8 @@
-package com.bbbond.androidStudyKT.home
+package com.bbbond.module_oreo.home
 
 import com.bbbond.module_common.data.ActItem
 
-interface MainContract {
+interface OreoMainContract {
     interface View {
         fun showActItems(acts: List<ActItem>)
     }

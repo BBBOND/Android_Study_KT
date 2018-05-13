@@ -1,7 +1,6 @@
-package com.bbbond.androidStudyKT.service
+package com.bbbond.module_common.service
 
 import android.content.Context
-import android.widget.Toast
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.service.DegradeService
