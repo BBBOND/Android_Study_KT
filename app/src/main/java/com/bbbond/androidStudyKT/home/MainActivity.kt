@@ -1,11 +1,13 @@
 package com.bbbond.androidStudyKT.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import com.bbbond.androidStudyKT.R
 import com.bbbond.module_common.BaseActivity
 import com.bbbond.module_common.adapter.CommonActionAdapter
 import com.bbbond.module_common.data.ActItem
+import com.bbbond.module_oreo.home.OreoMainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), MainContract.View {
@@ -40,6 +42,7 @@ class MainActivity : BaseActivity(), MainContract.View {
         lv.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val actItem = mAdapter?.getItem(position) as ActItem
             mPresenter?.jump(actItem)
+//            startActivity(Intent(this, OreoMainActivity::class.java))
         }
     }
 

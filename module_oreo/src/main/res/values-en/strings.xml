@@ -8,4 +8,5 @@
     <string name="oreo_show_pic">picture display</string>
     <string name="oreo_coming_in_pip">coming in Picture-in-Picture mode&#8230;</string>
     <string name="oreo_receive_like">Like Received!</string>
+    <string name="oreo_notification">Notification</string>
 </resources>

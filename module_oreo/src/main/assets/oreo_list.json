@@ -1,4 +1,7 @@
 [{
   "title": "Picture-in-Picture",
   "path": "/oreo/pip_activity?back=true"
+},{
+  "title": "Notifications",
+  "path": "/oreo/notification_activity?back=true"
 }]
