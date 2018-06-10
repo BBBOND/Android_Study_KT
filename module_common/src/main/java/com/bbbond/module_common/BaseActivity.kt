@@ -3,6 +3,8 @@ package com.bbbond.module_common
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import androidx.core.net.toUri
+import com.alibaba.android.arouter.launcher.ARouter
 import com.jude.swipbackhelper.SwipeBackHelper
 
 open class BaseActivity : AppCompatActivity() {
@@ -34,5 +36,13 @@ open class BaseActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         SwipeBackHelper.onDestroy(this)
+    }
+
+    protected fun jumpTo(path: String) {
+        ARouter
+                .getInstance()
+                .build(path.toUri())
+                .withTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                .navigation()
     }
 }

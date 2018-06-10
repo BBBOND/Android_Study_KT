@@ -1,4 +1,4 @@
-package com.bbbond.module_oreo.home
+package com.bbbond.module_admob
 
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
@@ -11,37 +11,38 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.module_common.BaseActivity
 import com.bbbond.module_common.adapter.CommonActionRecyclerAdapter
 import com.bbbond.module_common.data.ActItem
-import com.bbbond.module_oreo.R
-import kotlinx.android.synthetic.main.module_oreo_main_activity.*
+import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.module_admob_main_activity.*
 
-@Route(path = "/oreo/main_activity")
-class OreoMainActivity : BaseActivity(), OreoMainContract.View {
+@Route(path = "/admob/main_activity")
+class AdMobMainActivity : BaseActivity() {
 
-    private val TAG = OreoMainActivity::class.java.simpleName
+    private val TAG = AdMobMainActivity::class.java.simpleName
 
     @Autowired
     @JvmField
     var back: Boolean = false
 
     private var mAdapter: CommonActionRecyclerAdapter? = null
-    private var mPresenter: OreoMainContract.Presenter? = null
     private val actItems: ArrayList<ActItem> = ArrayList()
     private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ARouter.getInstance().inject(this)
-        setContentView(R.layout.module_oreo_main_activity)
+        setContentView(R.layout.module_admob_main_activity)
 
         initNavigation(back)
+        initData()
         initView()
-
-        mPresenter = OreoMainPresenter(this)
+        MobileAds.initialize(this, "ca-app-pub-7782501838134680~2692272483")
     }
 
-    override fun onResume() {
-        super.onResume()
-        mPresenter?.loadActItems()
+    private fun initData() {
+        actItems.add(ActItem().set("banner", "/admob/banner_activity?back=true"))
+        actItems.add(ActItem().set("interstitial", "/admob/interstitial_activity?back=true"))
+        actItems.add(ActItem().set("native", "/admob/native_activity?back=true"))
+        actItems.add(ActItem().set("rewarded", "/admob/rewarded_activity?back=true"))
     }
 
     private fun initView() {
@@ -56,11 +57,5 @@ class OreoMainActivity : BaseActivity(), OreoMainContract.View {
             layoutManager = viewManager
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
         }
-    }
-
-    override fun showActItems(acts: List<ActItem>) {
-        actItems.clear()
-        actItems.addAll(acts)
-        mAdapter?.notifyDataSetChanged()
     }
 }

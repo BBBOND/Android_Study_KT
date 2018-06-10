@@ -1,4 +1,7 @@
 [{
   "title": "Android-Oreo",
   "path": "/oreo/main_activity?back=true"
+}, {
+  "title": "AdMob",
+  "path": "/admob/main_activity?back=true"
 }]

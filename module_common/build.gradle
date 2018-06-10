@@ -30,13 +30,14 @@ kapt {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    api 'com.android.support:appcompat-v7:27.1.1'
-    api 'com.android.support.constraint:constraint-layout:1.1.0'
     api 'androidx.core:core-ktx:0.3'
     api "org.jetbrains.anko:anko:$anko_version"
     api "org.jetbrains.anko:anko-sqlite:$anko_version"
     api 'com.alibaba:fastjson:1.1.68.android'
     api 'com.jude:swipebackhelper:3.1.2'
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:recyclerview-v7:27.1.1'
+    api 'com.android.support.constraint:constraint-layout:1.1.1'
 
     api("com.alibaba:arouter-api:$arouter_api_version") {
         exclude group: 'com.android.support'

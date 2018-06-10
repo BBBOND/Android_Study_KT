@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">module_admob</string>
+    <string name="banner_ads">Banner Ads</string>
+    <string name="interstitial_ads">Interstitial Ads</string>
+    <string name="rewarded_video_ads">Rewarded Video Ads</string>
+    <string name="native_ads">Native Ads</string>
+    <string name="switch_on">开启广告</string>
+    <string name="switch_off">关闭广告</string>
+</resources>

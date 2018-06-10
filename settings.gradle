@@ -1,1 +1,1 @@
-include ':app', ':module_common', ':module_oreo'
+include ':app', ':module_common', ':module_oreo', ':module_admob'

@@ -1,0 +1,9 @@
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
+}

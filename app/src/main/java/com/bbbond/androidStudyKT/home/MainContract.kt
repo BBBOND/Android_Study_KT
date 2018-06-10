@@ -10,6 +10,5 @@ interface MainContract {
     interface Presenter {
 
         fun loadActItems()
-        fun jump(actItem: ActItem)
     }
 }
