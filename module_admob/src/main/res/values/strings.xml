@@ -6,4 +6,6 @@
     <string name="native_ads">Native Ads</string>
     <string name="switch_on">开启广告</string>
     <string name="switch_off">关闭广告</string>
+    <string name="show_interstitial_ads">show interstitial ads</string>
+    <string name="show_rewarded_ads">show rewarded ads</string>
 </resources>

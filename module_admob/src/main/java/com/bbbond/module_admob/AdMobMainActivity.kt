@@ -8,6 +8,7 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.bbbond.android_study_kt.R
 import com.bbbond.module_common.BaseActivity
 import com.bbbond.module_common.adapter.CommonActionRecyclerAdapter
 import com.bbbond.module_common.data.ActItem
@@ -41,7 +42,7 @@ class AdMobMainActivity : BaseActivity() {
     private fun initData() {
         actItems.add(ActItem().set("banner", "/admob/banner_activity?back=true"))
         actItems.add(ActItem().set("interstitial", "/admob/interstitial_activity?back=true"))
-        actItems.add(ActItem().set("native", "/admob/native_activity?back=true"))
+//        actItems.add(ActItem().set("native", "/admob/native_activity?back=true"))
         actItems.add(ActItem().set("rewarded", "/admob/rewarded_activity?back=true"))
     }
 

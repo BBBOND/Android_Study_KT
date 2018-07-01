@@ -1,8 +1,7 @@
-package com.bbbond.module_admob.banner
+package com.bbbond.module_admob.interstitial
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
@@ -10,14 +9,16 @@ import com.bbbond.android_study_kt.R
 import com.bbbond.module_common.BaseActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
-import kotlinx.android.synthetic.main.module_admob_banner_activity.*
-import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
+import com.google.android.gms.ads.InterstitialAd
+import kotlinx.android.synthetic.main.module_admob_interstitial_activity.*
 import org.jetbrains.anko.toast
 
-@Route(path = "/admob/banner_activity")
-class AdMobBannerActivity : BaseActivity() {
+@Route(path = "/admob/interstitial_activity")
+class AdMobInterstitialActivity : BaseActivity() {
 
-    private val TAG = AdMobBannerActivity::class.java.simpleName
+    private val TAG = AdMobInterstitialActivity::class.java.simpleName
+
+    private lateinit var mInterstitialAd: InterstitialAd
 
     @Autowired
     @JvmField
@@ -26,22 +27,21 @@ class AdMobBannerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ARouter.getInstance().inject(this)
-        setContentView(R.layout.module_admob_banner_activity)
+        setContentView(R.layout.module_admob_interstitial_activity)
         initNavigation(back)
 
         initAd()
-        switch_banner.onCheckedChange { _, isChecked ->
-            showHideAd(isChecked)
-        }
+        initEvent()
     }
 
     private fun initAd() {
-        val adRequest = AdRequest.Builder()
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-7782501838134680/8707565235"
+        mInterstitialAd.loadAd(AdRequest.Builder()
                 .addTestDevice("A60DFB23A39A9388BF39405D6F1B8BE0")
                 .addTestDevice("021F0CB79B33A837F8EB9531649973AA")
-                .build()
-        ad_banner.loadAd(adRequest)
-        ad_banner.adListener = object : AdListener() {
+                .build())
+        mInterstitialAd.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 toast("onAdLoaded")
                 Log.d(TAG, "onAdLoaded")
@@ -49,7 +49,7 @@ class AdMobBannerActivity : BaseActivity() {
 
             override fun onAdFailedToLoad(errorCode: Int) {
                 var msg = "ERROR_CODE_INTERNAL_ERROR"
-                when(errorCode) {
+                when (errorCode) {
                     AdRequest.ERROR_CODE_INTERNAL_ERROR -> msg = "ERROR_CODE_INTERNAL_ERROR"
                     AdRequest.ERROR_CODE_INVALID_REQUEST -> msg = "ERROR_CODE_INVALID_REQUEST"
                     AdRequest.ERROR_CODE_NETWORK_ERROR -> msg = "ERROR_CODE_NETWORK_ERROR"
@@ -77,7 +77,13 @@ class AdMobBannerActivity : BaseActivity() {
         }
     }
 
-    private fun showHideAd(show: Boolean) {
-        ad_banner.visibility = if (show) View.VISIBLE else View.GONE
+    private fun initEvent() {
+        btn_interstitial.setOnClickListener {
+            if (mInterstitialAd.isLoaded) {
+                mInterstitialAd.show()
+            } else {
+                Log.d(TAG, "The interstitial wasn't loaded yet.")
+            }
+        }
     }
 }
