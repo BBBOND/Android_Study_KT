@@ -41,14 +41,8 @@ android {
     }
 }
 
-kapt {
-    arguments {
-        arg("moduleName", project.getName())
-    }
+dependencies {
+
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':module_common')
-    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
-}
+apply from: '../module.gradle'

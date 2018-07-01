@@ -7,8 +7,6 @@ apply plugin: "kotlin-android"
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-apply from: '../module.gradle'
-
 android {
     compileSdkVersion 27
 
@@ -44,11 +42,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':module_common')
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-ads:15.0.1'
 }
 
+apply from: '../module.gradle'
 apply plugin: 'com.google.gms.google-services'

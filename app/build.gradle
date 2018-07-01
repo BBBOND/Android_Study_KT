@@ -34,22 +34,19 @@ android {
         //线程数
         threadCount = 8
     }
-}
 
-kapt {
-    arguments {
-        arg("moduleName", project.getName())
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:multidex:1.0.3'
-    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
-    implementation project(':module_common')
     if (isModule.toBoolean()) {
         implementation project(':module_oreo')
         implementation project(':module_admob')
     }
-
 }
+
+apply from: '../module.gradle'

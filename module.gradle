@@ -5,5 +5,9 @@ kapt {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
+    if (project.getName() != 'module_common') {
+        implementation project(':module_common')
+    }
 }
