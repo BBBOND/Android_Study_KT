@@ -3,6 +3,7 @@ package com.bbbond.module_common
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.core.net.toUri
 import com.alibaba.android.arouter.launcher.ARouter
 import com.jude.swipbackhelper.SwipeBackHelper
@@ -44,5 +45,9 @@ open class BaseActivity : AppCompatActivity() {
                 .build(path.toUri())
                 .withTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                 .navigation()
+    }
+
+    protected fun toast(msg: String?) {
+        Toast.makeText(this@BaseActivity, "$msg", Toast.LENGTH_SHORT).show()
     }
 }

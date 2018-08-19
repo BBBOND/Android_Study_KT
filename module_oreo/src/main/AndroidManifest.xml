@@ -17,6 +17,7 @@
             tools:targetApi="n" />
         <activity
             android:name=".notifications.OreoNotificationActivity"
+            android:launchMode="singleTask"
             android:label="@string/oreo_notification" />
     </application>
 

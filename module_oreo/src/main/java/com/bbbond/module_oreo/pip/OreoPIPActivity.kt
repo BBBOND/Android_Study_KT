@@ -20,7 +20,6 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.module_common.BaseActivity
 import com.bbbond.module_oreo.R
 import kotlinx.android.synthetic.main.module_oreo_pip_activity.*
-import org.jetbrains.anko.toast
 
 @Route(path = "/oreo/pip_activity")
 class OreoPIPActivity : BaseActivity() {

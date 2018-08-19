@@ -11,8 +11,6 @@ import com.bbbond.module_common.BaseActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.module_admob_banner_activity.*
-import org.jetbrains.anko.sdk25.coroutines.onCheckedChange
-import org.jetbrains.anko.toast
 
 @Route(path = "/admob/banner_activity")
 class AdMobBannerActivity : BaseActivity() {
@@ -30,7 +28,7 @@ class AdMobBannerActivity : BaseActivity() {
         initNavigation(back)
 
         initAd()
-        switch_banner.onCheckedChange { _, isChecked ->
+        switch_banner.setOnCheckedChangeListener { _, isChecked ->
             showHideAd(isChecked)
         }
     }

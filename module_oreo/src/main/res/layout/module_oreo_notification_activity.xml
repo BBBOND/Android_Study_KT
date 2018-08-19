@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context=".notifications.OreoNotificationActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_basic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Basic Notification" />
+
+            <Button
+                android:id="@+id/btn_big_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Big Picture Notification" />
+
+            <Button
+                android:id="@+id/btn_chats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Chats Notification" />
+
+            <Button
+                android:id="@+id/btn_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Progress Notification" />
+
+        </LinearLayout>
+    </ScrollView>
+</ScrollView>

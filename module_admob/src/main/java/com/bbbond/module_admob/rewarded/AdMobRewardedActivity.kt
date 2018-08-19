@@ -13,7 +13,6 @@ import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import kotlinx.android.synthetic.main.module_admob_rewarded_activity.*
-import org.jetbrains.anko.toast
 
 @Route(path = "/admob/rewarded_activity")
 class AdMobRewardedActivity : BaseActivity(), RewardedVideoAdListener {

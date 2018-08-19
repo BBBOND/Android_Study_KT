@@ -11,7 +11,6 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import kotlinx.android.synthetic.main.module_admob_interstitial_activity.*
-import org.jetbrains.anko.toast
 
 @Route(path = "/admob/interstitial_activity")
 class AdMobInterstitialActivity : BaseActivity() {
