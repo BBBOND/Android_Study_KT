@@ -3,10 +3,8 @@ package com.bbbond.module_oreo.notifications
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.RemoteInput
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -17,11 +15,8 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bbbond.module_common.BaseActivity
-import com.bbbond.module_common.utils.LogUtil
 import com.bbbond.module_oreo.R
 import java.util.*
-import android.content.ContentResolver
-import android.net.Uri
 
 
 @Route(path = "/oreo/notification_activity")
@@ -75,6 +70,11 @@ class OreoNotificationActivity : BaseActivity() {
 
             channel = NotificationChannel("progress", "progress", NotificationManager.IMPORTANCE_DEFAULT)
             channel.description = "Progress Notification"
+            channel.setShowBadge(false)
+            notificationManager?.createNotificationChannel(channel)
+
+            channel = NotificationChannel("custom", "custom", NotificationManager.IMPORTANCE_DEFAULT)
+            channel.description = "Custom Notification"
             notificationManager?.createNotificationChannel(channel)
 
         }
@@ -85,6 +85,10 @@ class OreoNotificationActivity : BaseActivity() {
             R.id.btn_basic -> {
                 MyNotificationManager.showBasicNotification(this)
                 toast("Basic Notification")
+            }
+            R.id.btn_group -> {
+                MyNotificationManager.showGroupNotification(this)
+                toast("Group Notification")
             }
             R.id.btn_big_pic -> {
                 MyNotificationManager.showBigPictureNotification(this)
@@ -99,6 +103,11 @@ class OreoNotificationActivity : BaseActivity() {
                 MyNotificationManager.showProgressNotification(this)
                 toast("Progress Notification")
             }
+            R.id.btn_custom -> {
+                MyNotificationManager.showCustomNotification(this)
+                toast("Custom Notification")
+            }
+
         }
     }
 

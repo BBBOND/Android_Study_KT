@@ -9,9 +9,10 @@ import android.os.Looper
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
 import android.support.v4.app.RemoteInput
-import com.bbbond.module_common.utils.LogUtil
+import android.widget.RemoteViews
 import com.bbbond.module_oreo.R
 import java.util.*
+
 
 object MyNotificationManager {
 
@@ -32,10 +33,54 @@ object MyNotificationManager {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .addAction(R.drawable.ic_notification, "ACTION1", createActionPendingIntent(context, "ACTION1", PendingIntent.FLAG_UPDATE_CURRENT, 0))
                 .setContentIntent(createPendingIntent(context))
+                .setNumber(10)
                 .setAutoCancel(true)
+                .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
 
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(2018, mBuilder.build())
+    }
+
+    private const val GROUP_KEY_WORK_EMAIL = "com.android.example.WORK_EMAIL"
+    /**
+     * 显示分组通知
+     */
+    fun showGroupNotification(context: Context) {
+        val newMessageNotification1 = NotificationCompat.Builder(context, "basic")
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("Summary")
+                .setContentText("You will not believe...")
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .build()
+
+        val newMessageNotification2 = NotificationCompat.Builder(context, "basic")
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("Summary")
+                .setContentText("Please join us to celebrate the...")
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .build()
+
+        val summaryNotification = NotificationCompat.Builder(context, "basic")
+                .setContentTitle("Summary")
+                //set content text to support devices running API level < 24
+                .setContentText("Two new messages")
+                .setSmallIcon(R.drawable.ic_notification)
+                //build summary info into InboxStyle template
+                .setStyle(NotificationCompat.InboxStyle()
+                        .addLine("Alex Faarborg  Check this out")
+                        .addLine("Jeff Chang    Launch Party")
+                        .setBigContentTitle("2 new messages")
+                        .setSummaryText("janedoe@example.com"))
+                //specify which group this notification belongs to
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                //set this notification as the summary for the group
+                .setGroupSummary(true)
+                .build()
+
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(Random().nextInt(), newMessageNotification1)
+        notificationManager.notify(Random().nextInt(), newMessageNotification2)
+        notificationManager.notify(0, summaryNotification)
     }
 
     /**
@@ -132,9 +177,27 @@ object MyNotificationManager {
         }
 
         val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(2018, mBuilder.build())
+        notificationManager.notify(2021, mBuilder.build())
     }
 
+    /**
+     * 显示自定义通知
+     */
+    fun showCustomNotification(context: Context) {
+        val notificationLayout = RemoteViews(context.packageName, R.layout.module_oreo_notification_custom_small)
+        val notificationLayoutExpanded = RemoteViews(context.packageName, R.layout.module_oreo_notification_custom_large)
+
+        val mBuilder: NotificationCompat.Builder = NotificationCompat.Builder(context, "custom")
+                .setSmallIcon(R.drawable.ic_notification)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setStyle(NotificationCompat.DecoratedCustomViewStyle())
+                .setCustomContentView(notificationLayout)
+                .setCustomBigContentView(notificationLayoutExpanded)
+                .setAutoCancel(true)
+
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(2022, mBuilder.build())
+    }
 
     /* ============================================================ */
 

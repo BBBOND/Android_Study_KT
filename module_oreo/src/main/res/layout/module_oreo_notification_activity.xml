@@ -23,6 +23,13 @@
                 android:text="Basic Notification" />
 
             <Button
+                android:id="@+id/btn_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Group Notification" />
+
+            <Button
                 android:id="@+id/btn_big_pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,6 +49,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="showNotification"
                 android:text="Progress Notification" />
+
+            <Button
+                android:id="@+id/btn_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="Custom Notification" />
 
         </LinearLayout>
     </ScrollView>

@@ -9,4 +9,6 @@
     <string name="oreo_coming_in_pip">即将进入画中画模式&#8230;</string>
     <string name="oreo_receive_like">收到点赞！</string>
     <string name="oreo_notification">通知</string>
+    <string name="custom_notification_large">巨型自定义通知 \n 最高 256 dp</string>
+    <string name="custom_notification_small">小型自定义通知 \n 最高 64 dp</string>
 </resources>

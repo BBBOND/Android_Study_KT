@@ -9,4 +9,6 @@
     <string name="oreo_coming_in_pip">coming in Picture-in-Picture mode&#8230;</string>
     <string name="oreo_receive_like">Like Received!</string>
     <string name="oreo_notification">Notification</string>
+    <string name="custom_notification_large">Custom Notification Large \n limited to 256 dp</string>
+    <string name="custom_notification_small">Custom Notification Small \n limited to 64 dp</string>
 </resources>
