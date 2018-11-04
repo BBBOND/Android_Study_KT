@@ -18,7 +18,6 @@ import com.bbbond.moduleCommon.BaseActivity
 import com.bbbond.moduleOreo.R
 import java.util.*
 
-
 @Route(path = "/oreo/notification_activity")
 class OreoNotificationActivity : BaseActivity() {
 
@@ -107,13 +106,19 @@ class OreoNotificationActivity : BaseActivity() {
                 MyNotificationManager.showCustomNotification(this)
                 toast("Custom Notification")
             }
-
+            R.id.btn_notification_listener -> {
+                openNotificationAccess()
+            }
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(nbr)
+    }
+
+    private fun openNotificationAccess() {
+        startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
     }
 
     class NotificationBroadcastReceiver : BroadcastReceiver() {

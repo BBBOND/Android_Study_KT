@@ -11,4 +11,5 @@
     <string name="oreo_notification">Notification</string>
     <string name="custom_notification_large">Custom Notification Large \n limited to 256 dp</string>
     <string name="custom_notification_small">Custom Notification Small \n limited to 64 dp</string>
+    <string name="notification_listener_service">NotificationListenerService</string>
 </resources>

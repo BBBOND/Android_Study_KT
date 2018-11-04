@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Looper
 import android.support.v4.app.NotificationCompat
@@ -37,6 +38,9 @@ object MyNotificationManager {
                 .setAutoCancel(true)
                 // 2秒后自动关闭
                 .setTimeoutAfter(2000)
+                // 设置着色器(主色调)
+                .setColor(Color.RED)
+                .setColorized(true)
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
 
         val notificationManager = NotificationManagerCompat.from(context)
