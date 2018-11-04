@@ -1,8 +1,8 @@
-package com.bbbond.androidStudyKT.home
+package com.bbbond.moduleOreo.home
 
 import com.bbbond.moduleCommon.data.ActItem
 
-interface MainContract {
+interface OreoMainContract {
     interface View {
         fun showActItems(acts: List<ActItem>)
     }
@@ -10,5 +10,6 @@ interface MainContract {
     interface Presenter {
 
         fun loadActItems()
+        fun jump(actItem: ActItem)
     }
 }

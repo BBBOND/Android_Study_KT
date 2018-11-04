@@ -4,9 +4,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application>
-        <activity android:name="com.bbbond.module_admob.AdMobMainActivity"/>
-        <activity android:name="com.bbbond.module_admob.banner.AdMobBannerActivity"/>
-        <activity android:name="com.bbbond.module_admob.interstitial.AdMobInterstitialActivity"/>
-        <activity android:name="com.bbbond.module_admob.rewarded.AdMobRewardedActivity"/>
+        <activity android:name="com.bbbond.moduleAdmob.AdMobMainActivity"/>
+        <activity android:name="com.bbbond.moduleAdmob.banner.AdMobBannerActivity"/>
+        <activity android:name="com.bbbond.moduleAdmob.interstitial.AdMobInterstitialActivity"/>
+        <activity android:name="com.bbbond.moduleAdmob.rewarded.AdMobRewardedActivity"/>
     </application>
 </manifest>

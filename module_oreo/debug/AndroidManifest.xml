@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bbbond.module_oreo">
+    package="com.bbbond.moduleOreo">
 
     <application
         android:allowBackup="true"

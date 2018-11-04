@@ -2,7 +2,7 @@ package com.bbbond.androidStudyKT.home
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import com.bbbond.module_common.data.ActItem
+import com.bbbond.moduleCommon.data.ActItem
 
 class MainPresenter(
         var activity: MainActivity

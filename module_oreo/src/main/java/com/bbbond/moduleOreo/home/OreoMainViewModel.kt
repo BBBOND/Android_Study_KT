@@ -1,4 +1,4 @@
-package com.bbbond.androidStudyKT.home
+package com.bbbond.moduleOreo.home
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
@@ -11,9 +11,9 @@ import com.bbbond.moduleCommon.data.source.ActItemRepository
 import com.bbbond.moduleCommon.data.source.local.ActItemLocalDataSource
 import com.bbbond.moduleCommon.utils.LogUtil
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+class OreoMainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val TAG: String = MainViewModel::class.java.simpleName
+    private val TAG: String = OreoMainViewModel::class.java.simpleName
 
     private var actItemList: MutableLiveData<List<ActItem>> = MutableLiveData<List<ActItem>>()
     private val mActItemRepository: ActItemRepository = ActItemRepository.getInstance(ActItemLocalDataSource.getInstance(getApplication()))
@@ -23,7 +23,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun loadActItemList() {
-        mActItemRepository.getActItems("list.json", object : ActItemDataSource.LoadActItemsCallback {
+        mActItemRepository.getActItems("oreo_list.json", object : ActItemDataSource.LoadActItemsCallback {
             override fun onActItemsLoaded(actItems: List<ActItem>) {
                 actItemList.value = actItems
             }
