@@ -11,7 +11,7 @@
         //set the right in/out animation of Activity,you can change this to yours
         <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
     </style>
-    
+
     <style name="NoTranslucent" parent="@style/AppTheme">
         <item name="android:windowIsTranslucent">false</item>
     </style>
